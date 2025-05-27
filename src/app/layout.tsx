@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import React from "react";
 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed&display=swap');
+</style>
+
 export const metadata: Metadata = {
   title: "Helping Hands: Trusted Maids & AC Services in Bhilai",
   description: "Hire verified maids, cooks, and professionals in Bhilai and India with Helping Hands. Affordable, reliable, safe. Book now!",
@@ -11,7 +15,6 @@ export const metadata: Metadata = {
     description: "Hire verified maids and cooks in Bhilai and India. Safe, affordable, reliable. Book with Helping Hands today!",
     type: "website",
     url: "https://helpinghandsindia.co",
-    images: [{ url: "https://helpinghandsindia.co/og-image.jpg" }],
   },
   icons: {
     icon: "/HH-favicon.png",
