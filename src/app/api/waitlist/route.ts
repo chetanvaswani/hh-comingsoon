@@ -36,7 +36,12 @@ export async function POST(request: NextRequest) {
     });
 
     if (existing) {
-      return NextResponse.json({ message: 'Already on waitlist' }, { status: 200 });
+      const token = jwt.sign(
+        { name: existing.name, mobileNumber: existing.mobileNumber, waitlistId: existing.id },
+        process.env.JWT_SECRET || 'default-secret', 
+        { expiresIn: '90d' } 
+      );
+      return NextResponse.json({ message: 'Already on waitlist', token }, { status: 200 });
     }
 
     const entry = await prisma.waitlistEntry.create({

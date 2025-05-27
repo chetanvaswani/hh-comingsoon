@@ -115,7 +115,7 @@ export default function Home() {
         try {
           const decoded = jwtDecode<JwtPayload>(token); 
           const currentTime = Math.floor(Date.now() / 1000); 
-          // @ts-ignore
+          // @ts-expect-error -- Expecting a TypeScript error because `decoded.exp` might be undefined despite the JwtPayload type
           if ( decoded.exp > currentTime) {
             // console.log("valid token");
             return; 
@@ -161,7 +161,7 @@ export default function Home() {
   };
 
   const handleMobileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let value = e.target.value;
+    const value = e.target.value;
     let digits = value.replace(/\D/g, "");
     if (digits.length > 10) {
       digits = digits.slice(-10);
@@ -199,12 +199,12 @@ export default function Home() {
   };
 
   return (
-    <div className="h-svh w-full bg-black flex justify-center overflow-hidden ">
-      <video loop autoPlay muted playsInline preload="metadata" className="h-full w-full fixed top-0 left-0">
-          <source src="/comingsoon.MP4" type="video/mp4" />
+    <div className="h-svh w-full z-0 flex justify-center overflow-hidden bg-transparent">
+      <video loop autoPlay muted playsInline preload="metadata" className="z-10 h-full w-full fixed top-0 left-0">
+          <source src="/comingsoon.mp4" type="video/mp4" />
           Your browser does not support the video.
       </video>
-      <div className="relative top-[45%] left-0 flex flex-col w-full items-center gap-7">
+      <div className="relative bg-transparent top-[45%] left-0 flex flex-col w-full items-center gap-7 z-20">
         {
           !onWaitlist ?
           <>
@@ -237,7 +237,7 @@ export default function Home() {
               YOU ARE ON OUR WAITLIST!
             </div>
             <div className="text-sm">
-              AND IT'S AN HONOR TO HAVE YOU ON BOARD.
+              AND IT&apos;S AN HONOR TO HAVE YOU ON BOARD.
             </div>
             <div className="w-[80%] text-center mt-7 text-sm">
               WE WILL ADD A COUPON TO YOUR HELPING HANDS ACCOUNT AS A TOKEN OF APPRECIATION. YOU CAN LOGIN VIA YOUR MOBILE NUMBER WITHIN 30 DAYS OF LAUCH TO REDEEM IT.

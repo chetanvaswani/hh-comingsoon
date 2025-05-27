@@ -2,10 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import React from "react";
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed&display=swap');
-</style>
-
 export const metadata: Metadata = {
   title: "Helping Hands: Trusted Maids & AC Services in Bhilai",
   description: "Hire verified maids, cooks, and professionals in Bhilai and India with Helping Hands. Affordable, reliable, safe. Book now!",
@@ -30,6 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed&display=swap" rel="stylesheet" />
+      </head>
       <body
         className={`antialiased`}
       >
