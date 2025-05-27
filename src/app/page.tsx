@@ -232,7 +232,7 @@ export default function Home() {
               </button>
             </div>
           </> : 
-          <div className="flex flex-col items-center mt-7 text-white/90">
+          <div className="flex flex-col items-center mt-7 text-white/90 md:max-w-[400px]">
             <div className="font-bold text-2xl">
               YOU ARE ON OUR WAITLIST!
             </div>
