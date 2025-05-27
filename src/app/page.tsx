@@ -199,7 +199,7 @@ export default function Home() {
   };
 
   return (
-    <div className="h-svh w-full z-0 flex justify-center overflow-hidden bg-transparent">
+    <div className="h-svh bg-black w-full z-0 flex justify-center overflow-hidden ">
       <video loop autoPlay muted playsInline preload="metadata" className="z-10 h-full w-full fixed top-0 left-0">
           <source src="/comingsoon.mp4" type="video/mp4" />
           Your browser does not support the video.
@@ -232,7 +232,7 @@ export default function Home() {
               </button>
             </div>
           </> : 
-          <div className="flex flex-col items-center mt-7">
+          <div className="flex flex-col items-center mt-7 text-white/90">
             <div className="font-bold text-2xl">
               YOU ARE ON OUR WAITLIST!
             </div>
